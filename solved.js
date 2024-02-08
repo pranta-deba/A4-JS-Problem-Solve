@@ -12,9 +12,7 @@ function calculateMoney(ticket) {
   const profit = totalRs - (janitorSalary + lunchMoneyFor8People);
   return profit;
 }
-const calculateMoneyResult = calculateMoney(10);
-// console.log(calculateMoneyResult);
-// --------------------------------------------------------------------------------
+
 function checkName(name) {
   if (typeof name !== "string") {
     return "invalid!";
@@ -37,10 +35,6 @@ function checkName(name) {
     return "Bad Name";
   }
 }
-const checkNameResult = checkName("RAFEE");
-// console.log(checkNameResult);
-
-// --------------------------------------------------------------------------------
 
 function deleteInvalids(array) {
   if (!Array.isArray(array)) {
@@ -58,20 +52,6 @@ function deleteInvalids(array) {
   }
   return onlyNumArray;
 }
-const deleteInvalidsResult = deleteInvalids([
-  1,
-  null,
-  undefined,
-  18,
-  -19,
-  NaN,
-  "12",
-  [1, 2],
-  { ob: "lala" },
-]);
-// console.log(deleteInvalidsResult);
-
-// --------------------------------------------------------------------------------
 
 function password(obj) {
   if (typeof obj !== "object" || Array.isArray(obj) || obj === null) {
@@ -90,20 +70,11 @@ function password(obj) {
   const strongPass = websiteName + "#" + obj.name + "@" + obj.birthYear;
   return strongPass;
 }
-const passwordResult = password({
-  name: "kolimuddin",
-  birthYear: 1958,
-  siteName: "google",
-});
-// console.log(passwordResult);
-
-// --------------------------------------------------------------------------------
 
 function monthlySavings(arr, livingCost) {
   if (!Array.isArray(arr) || typeof livingCost !== "number") {
     return "invalid input";
   }
-
   let totalAmount = 0;
   let findBigAmount = 0;
   for (const amount of arr) {
@@ -114,12 +85,9 @@ function monthlySavings(arr, livingCost) {
   }
   const tax = (findBigAmount * 20) / 100;
   const totalSavings = totalAmount - (livingCost + tax);
-
   if (totalSavings >= 0) {
     return totalSavings;
-  }else{
+  } else {
     return "earn more";
   }
 }
-const monthlySavingsResult = monthlySavings([ 1000 , 2000 , 2500 ] , 5000);
-console.log(monthlySavingsResult);
